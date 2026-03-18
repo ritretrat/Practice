@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>영단어 암기장</title>
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4a90e2">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!--단어 입력 영역-->
+    <section id="input-section">
+        <h1>단어 입력</h1>
+
+        <div class="word-row">
+            <!--영단어 입력-->
+            <input type="text" id="input-english" placeholder="영단어">
+            
+            <!--뜻 입력-->
+            <input type="text" id="input-korean" placeholder="뜻">
+
+            <!--단어 추가 버튼-->
+            <button id="btn-add">단어 추가</button>
+        </div>
+
+        <!--추가한 단어 목록-->
+        <!--wold-list에 단어 10개면 quiz-row에 10개 단어-->
+        <ul id="word-list"></ul>
+
+        <!--시작-->
+        <button id="btn-start">학습 시작</button>
+    </section>
+
+    <!--학습 구역(처음엔 숨김)-->
+    <section id="quiz-section" class="hidden">
+        <h1>테스트</h1>
+
+        <!-- 정답 입력 칸
+        <input type="text" id="quiz-answer" placeholder="답을 입력하시오">
+
+        정답 확인 버튼
+        <button id="btn-check">정답 확인</button>
+
+        결과(맞다, 틀리다)
+        <div id="quiz-result"></div> -->
+
+        <!--문제를 보여줌-->
+        <div id="quiz-rows"></div>
+
+        <div class="quiz-buttons">
+            <button id="btn-check">정답보기</button>
+            <button id="btn-retry">랜덤섞기</button>
+            <button id="btn-back">돌아가기</button>
+        </div>
+    </section>
+
+    <!--js 파일 연결. html 다 로딩된 후 실행의 목표-->
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,203 @@
+* {
+    box-sizing: border-box; /*패딩이 너비에 포함되게끔*/
+    margin:0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Courier New', sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    padding: 32px 16px;
+}
+
+/* section */
+section {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 28px;
+    max-width: 700px;
+    margin: 0 auto 24px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+h1 {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #1a1a2e;
+}
+
+/* 단어 입력 */
+.word-row {
+    display: flex;
+    gap: 8px; /*요소 사이 간격*/
+    margin-bottom: 16px;
+    flex-wrap: wrap; /*자동 줄바꿈*/
+}
+
+input[type="text"] {
+    flex: 1;
+    min-width: 120px;
+    padding: 10px 14px;
+    border: 1.5px solid #dde1e7;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s; /*focus시 부드러운 색 변화*/
+}
+
+input[type="text"]:focus {
+    border-color: #4a90e2;
+}
+
+/* 버튼 스타일 */
+button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer; /*손가락 커서 모양*/
+    transition: background-color 0.2s, transfotm 0.1s;
+}
+
+button:active {
+    transform: scale(0.97); /* 살짝 눌리는 시각적 효과*/
+}
+
+/*단어 추가*/
+#btn-add {
+    background-color: #4a90e2;
+    color: white;
+}
+
+/*학습 시작*/
+#btn-start {
+    background-color: #2ecc71;
+    color: white;
+    width: 100%;
+    margin-top: 12px;
+}
+
+/*정답확인*/
+#btn-check {
+    background-color: #4a90e2;
+    color: white;
+}
+
+/*재시도*/
+#btn-retry {
+    background-color: #f39c12;
+    color: white;
+}
+
+/*단어 입력으로 돌아가기*/
+#btn-back {
+    background-color: #95a5a6;
+    color: white;
+}
+
+button:hover {
+    filter: brightness(1.1); /*마우스 올리면 밝아짐*/
+}
+
+/* 단어 목록 */
+#word-list {
+    list-style: none; /*기존 점 모양 제거*/
+    margin-bottom: 16px;
+}
+
+#word-list li{
+    display: flex;
+    justify-content: space-between; /*단어, 삭제버튼을 양 끝 배치*/
+    align-items: center;
+    padding: 10px 14px;
+    margin-bottom: 6px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+/* 삭제 버튼? */
+#word-list li .delete-btn {
+    background: none;
+    border: none;
+    color: #e74c3c;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 2px 6px;
+}
+
+/* 학습 구역 - 퀴즈 */
+#quiz-rows {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.quiz-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.quiz-question {
+    min-width: 140px;
+    font-weight: 600;
+    font-size: 15px;
+    color: #1a1a2e;
+}
+
+.quiz-answer {
+    flex: 1; /*고정된 영역을 제외한 나머지를 차지함(유동적)*/
+}
+
+/* 정답/오답 결과 표시 */
+.quiz-result {
+    min-width: 60px;
+    font-size: 13px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* 정답/오답 색상 - js가 이 클래스를 붙엿다뗏다 함 */
+
+
+.correct {
+    border-color: #2ecc71 !important; 
+    background-color: #eafaf1 !important;
+  }
+  
+  .wrong {
+    border-color: #e74c3c !important; 
+    background-color: #fdecea !important;
+  }
+  
+  .result-correct {
+    color: #27ae60; 
+  }
+  
+  .result-wrong {
+    color: #e74c3c; 
+  }
+
+
+
+
+
+
+/* 숨김 처리 — JS가 이 클래스를 제거하면 나타남*/
+   .hidden {
+    display: none;
+  }
+  
+  
+  /* 버튼 묶음 */
+  .quiz-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
